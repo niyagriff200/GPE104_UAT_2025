@@ -1,83 +1,85 @@
 using UnityEngine;
 
+// Handles player input and passes movement commands to the pawn
 public class PlayerController : Controller
 {
-    public Pawn pawn;
+    public Pawn pawn; // Reference to the controlled pawn
 
     private void Update()
     {
+        // Only process input if a pawn is assigned
         if (pawn != null)
         {
+            // Forward movement (W key)
             if (Input.GetKey(KeyCode.W))
             {
-                //MoveTurbo if the player is holding left or right shift key
+                // Use turbo if shift is held
                 if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
                 {
                     pawn.MoveTurbo(pawn.transform.up);
                 }
                 else
                 {
-                    //Otherwise use Move
                     pawn.Move(pawn.transform.up);
                 }
-
             }
 
+            // Backward movement (S key)
             if (Input.GetKey(KeyCode.S))
             {
-                //MoveTurbo if the player is holding left or right shift key
-                if (Input.GetKey(KeyCode.RightShift) ||  Input.GetKey(KeyCode.LeftShift))
+                // Use turbo if shift is held
+                if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
                 {
                     pawn.MoveTurbo(-pawn.transform.up);
                 }
                 else
                 {
-                    //Otherwise use Move
                     pawn.Move(-pawn.transform.up);
                 }
             }
 
+            // Rotate right (D key)
             if (Input.GetKey(KeyCode.D))
             {
-                //Rotate to the right
                 pawn.Rotate(-1.0f);
             }
 
+            // Rotate left (A key)
             if (Input.GetKey(KeyCode.A))
-            { 
-                //Rotate to the left
-                pawn.Rotate(1.0f); 
+            {
+                pawn.Rotate(1.0f);
             }
 
+            // Directional teleport using arrow keys
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                //Teleport a certain distance up
                 pawn.Teleport(Vector3.up);
             }
 
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                //Teleport a certain distance down
                 pawn.Teleport(Vector3.down);
             }
 
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                //Teleport a certain distance to the left
                 pawn.Teleport(Vector3.left);
             }
 
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                //Teleport a certain distance to the right
                 pawn.Teleport(Vector3.right);
             }
 
+            // Random teleport (T key)
             if (Input.GetKeyDown(KeyCode.T))
             {
-                //Randomly Teleport a certain distance in a square radius
                 pawn.TeleportRandom();
+            }
 
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                pawn.shooter.Shoot();
             }
         }
     }

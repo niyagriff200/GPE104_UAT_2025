@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 856bcdc6a0581b9459f6d862f73d5d92
+guid: b2401d73bb288ee4aa9bc5ccbfd59173
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1577289885472759104
-    second: meteorGrey_small1_0
+      213: -3347891371945259753
+    second: laserBlue06_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -178,13 +178,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: meteorGrey_small1_0
+      name: laserBlue06_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 28
-        height: 28
+        width: 13
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,8 +193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 04d9b634bc8a3e510800000000000000
-      internalID: 1577289885472759104
+      spriteID: 71d8b9cf886e981d0800000000000000
+      internalID: -3347891371945259753
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      meteorGrey_small1_0: 1577289885472759104
+      laserBlue06_0: -3347891371945259753
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
