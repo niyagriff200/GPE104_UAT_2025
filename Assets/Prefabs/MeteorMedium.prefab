@@ -15,7 +15,9 @@ GameObject:
   - component: {fileID: -2220521238144611381}
   - component: {fileID: 1350522015113369804}
   - component: {fileID: 1370754505374713534}
-  - component: {fileID: -8999397211562709081}
+  - component: {fileID: 5734863277384983004}
+  - component: {fileID: 5596998827226816768}
+  - component: {fileID: 4321652143188978651}
   m_Layer: 7
   m_Name: MeteorMedium
   m_TagString: Untagged
@@ -162,7 +164,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -195,7 +197,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-8999397211562709081
+--- !u!114 &5734863277384983004
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -204,7 +206,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 3757245463823947287}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49a3bab4a7fc8674698fa8c7f6399e6d, type: 3}
+  m_Script: {fileID: 11500000, guid: a18e50053443f3141b09e42106b1563a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DamageOnCollision
-  instantKill: 0
+  m_EditorClassIdentifier: Assembly-CSharp::MeteorOnCollisionResponse
+  size: 1
+--- !u!114 &5596998827226816768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3757245463823947287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1551319de89ab4c44b1942ea1da1ea52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScreenWrap
+--- !u!114 &4321652143188978651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3757245463823947287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98fc18f1921e91c42af049cbf84890f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageFlash

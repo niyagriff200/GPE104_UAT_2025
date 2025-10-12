@@ -14,6 +14,20 @@ public class MeteorHealth : Health
 
     protected override void Die()
     {
+        // Award score based on size
+        switch (size)
+        {
+            case 3:
+                GameManager.instance.AddScore(GameManager.instance.bigMeteorScore);
+                break;
+            case 2:
+                GameManager.instance.AddScore(GameManager.instance.mediumMeteorScore);
+                break;
+            case 1:
+                GameManager.instance.AddScore(GameManager.instance.smallMeteorScore);
+                break;
+        }
+
         // Split into smaller meteors if size > 1
         if (size > 1)
         {
@@ -24,7 +38,14 @@ public class MeteorHealth : Health
         DeathTarget target = GetComponent<DeathTarget>();
         if (target != null)
         {
+            AudioSource.PlayClipAtPoint(GameManager.instance.deathSound, transform.position, 1f);
             target.Die(); // Handles removal and destruction
         }
+    }
+
+
+    public void SetSize(int newSize)
+    {
+        size = newSize;
     }
 }

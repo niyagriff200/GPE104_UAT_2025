@@ -11,10 +11,14 @@ public class UFOHealth : Health
 
     protected override void Die()
     {
+        // Award score for UFO kill
+        GameManager.instance.AddScore(GameManager.instance.ufoScore);
+
         // Remove from activeEnemies and destroy—UFOs use DeathTarget
         DeathTarget target = GetComponent<DeathTarget>();
         if (target != null)
         {
+            AudioSource.PlayClipAtPoint(GameManager.instance.deathSound, transform.position, 1f);
             target.Die(); // Handles removal and destruction
         }
     }

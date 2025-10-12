@@ -12,6 +12,7 @@ public class ProjectileShooter : MonoBehaviour
 
         if (projectilePrefab != null && projectileSpawnPoint != null)
         {
+            GetComponent<AudioSource>().PlayOneShot(GameManager.instance.shootSound);
             Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
         }
     }
