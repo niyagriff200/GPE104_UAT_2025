@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Handles button logic for main menu navigation
 public class MainMenuUI : MonoBehaviour
 {
     public void StartButton()

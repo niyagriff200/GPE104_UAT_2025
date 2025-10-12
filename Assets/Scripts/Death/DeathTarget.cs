@@ -10,10 +10,10 @@ public class DeathTarget : DeathDestroy
         {
             hasDied = true;
 
-            // Remove from activeEnemies list—important for spawn pacing and enemy count checks
+            // Remove from activeEnemies list—used for tracking win conditions and pacing
             GameManager.instance.RemoveEnemy(gameObject);
 
-            // Call base death logic (Destroy) to clean up the object
+            // Call base death logic to destroy the object
             base.Die();
         }
     }

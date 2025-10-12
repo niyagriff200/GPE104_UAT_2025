@@ -1,20 +1,15 @@
 using UnityEngine;
 
+// Handles navigation from settings screen
 public class SettingsUI : MonoBehaviour
 {
     public void Controls()
     {
-        if (GameManager.instance != null)
-        {
-            GameManager.instance.ShowControlsScreen();
-        }
+        GameManager.instance?.ShowControlsScreen();
     }
 
     public void MainMenu()
     {
-        if (GameManager.instance != null)
-        {
-            GameManager.instance.ShowMainMenu();
-        }
+        GameManager.instance?.ShowMainMenu();
     }
 }

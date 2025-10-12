@@ -1,12 +1,10 @@
 using UnityEngine;
 
+// Handles return to settings screen from controls screen
 public class ControlsUI : MonoBehaviour
 {
     public void Settings()
     {
-        if (GameManager.instance != null)
-        {
-            GameManager.instance.ShowSettingsScreen();
-        }
+        GameManager.instance?.ShowSettingsScreen();
     }
 }

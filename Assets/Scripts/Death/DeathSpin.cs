@@ -1,37 +1,34 @@
 using UnityEngine;
 
+// Handles death animation by spinning and shrinking before destroying the object
 public class DeathSpin : Death
 {
-    private bool isDying = false; // Flag to trigger spin/scale effect
-    private float timer = 0f;     // Tracks how long the effect has been running
+    private bool isDying = false;     // Tracks whether death animation has started
+    private float timer = 0f;         // Tracks elapsed time since death began
 
-    // Hardcoded to avoid cluttering GameManager (for visual purposes only)
-    private float spinRate = 360f;     // Full rotation per second
-    private float scaleRate = 0.5f;    // Shrinks by half per second
-    private float duration = 1.5f;     // Total time before destruction
+    private float spinRate = 360f;    // Rotation speed in degrees per second
+    private float scaleRate = 0.5f;   // Shrink rate per second
+    private float duration = 1.5f;    // Max time before object is destroyed
 
     public override void Die()
     {
-        // Called when object reaches 0 health—starts visual death effect
-        isDying = true;
+        isDying = true; // Trigger death animation
     }
 
     private void Update()
     {
-        if (!isDying) return;
+        if (!isDying) return; // Skip if not dying
 
-        timer += Time.deltaTime;
+        timer += Time.deltaTime; // Track time since death started
 
-        // Rotate for dramatic effect—used on final life only
-        transform.Rotate(0f, 0f, spinRate * Time.deltaTime);
+        transform.Rotate(0f, 0f, spinRate * Time.deltaTime); // Apply spin
 
-        // Shrink object to simulate fading out
-        transform.localScale -= Vector3.one * scaleRate * Time.deltaTime;
+        transform.localScale -= Vector3.one * scaleRate * Time.deltaTime; // Shrink object
 
-        // Destroy when effect finishes or object is nearly invisible
+        // Destroy object when time runs out or it's nearly invisible
         if (timer >= duration || transform.localScale.x <= 0.1f)
         {
-            Destroy(gameObject); // Only used when lives = 0
+            Destroy(gameObject);
         }
     }
 }

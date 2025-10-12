@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Applies knockback force when damaged
 public class KnockbackOnDamage : MonoBehaviour
 {
     private float knockbackForce;
@@ -11,7 +12,6 @@ public class KnockbackOnDamage : MonoBehaviour
 
     public void ApplyKnockback(Vector3 hitDirection)
     {
-        Vector3 direction = hitDirection;
-        transform.position += direction * knockbackForce;
+        transform.position += hitDirection * knockbackForce;
     }
 }

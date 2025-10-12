@@ -1,12 +1,10 @@
 using UnityEngine;
 
+// Handles return to main menu from credits screen
 public class CreditsUI : MonoBehaviour
 {
     public void MainMenu()
     {
-        if (GameManager.instance != null)
-        {
-            GameManager.instance.ShowMainMenu();
-        }
+        GameManager.instance?.ShowMainMenu();
     }
 }

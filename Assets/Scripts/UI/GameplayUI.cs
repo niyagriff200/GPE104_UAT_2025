@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Updates score, health bar, and lives icons during gameplay
 public class GameplayUI : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
@@ -21,8 +22,6 @@ public class GameplayUI : MonoBehaviour
         }
     }
 
-
-
     private void Update()
     {
         scoreText.text = "Score: " + GameManager.instance.score.ToString("0000");
@@ -33,7 +32,6 @@ public class GameplayUI : MonoBehaviour
 
     public void InitializeLives(int totalLives)
     {
-
         // Clear existing icons
         foreach (Transform child in livesContainer)
         {
@@ -51,8 +49,7 @@ public class GameplayUI : MonoBehaviour
 
     public void UpdateLives(int currentLives)
     {
-        
-
+        // Toggle icons based on currentLives
         if (lifeIcons == null || lifeIcons.Length == 0)
         {
             return;
@@ -63,5 +60,4 @@ public class GameplayUI : MonoBehaviour
             lifeIcons[i].SetActive(i < currentLives);
         }
     }
-
 }

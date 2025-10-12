@@ -43,7 +43,7 @@ public class MeteorHealth : Health
         }
     }
 
-
+    // Called externally to define meteor size before spawning
     public void SetSize(int newSize)
     {
         size = newSize;

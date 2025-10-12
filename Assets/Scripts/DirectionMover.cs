@@ -18,7 +18,7 @@ public class DirectionMover : MonoBehaviour
 
     public void GetRandomDirection()
     {
-        // Set speed from GameManager and choose a random 2D direction
+        // Pull speed from GameManager and assign a random 2D direction
         moveSpeed = GameManager.instance.meteorMoveSpeed;
         moveDirection = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
     }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 
+// Displays score, high score, and win/loss result on game over screen
 public class GameOverUI : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
@@ -18,44 +19,33 @@ public class GameOverUI : MonoBehaviour
 
     public void PlayAgain()
     {
-        if (GameManager.instance != null)
-        {
-            GameManager.instance.ShowGameplay();
-        }
+        GameManager.instance?.ShowGameplay();
     }
 
     public void MainMenu()
     {
-        if (GameManager.instance != null)
-        {
-            GameManager.instance.ShowMainMenu();
-        }
+        GameManager.instance?.ShowMainMenu();
     }
 
     public void ShowResults()
     {
         bool playerWon = false;
 
-        // Check for win condition: all enemies defeated and enough were spawned
-        if (GameManager.instance.activeEnemies.Count == 0 && GameManager.instance.initialEnemiesSpawned >= GameManager.instance.enemyCount)
+        // Win: all enemies defeated and enough were spawned
+        if (GameManager.instance.activeEnemies.Count == 0 &&
+            GameManager.instance.initialEnemiesSpawned >= GameManager.instance.enemyCount)
         {
             playerWon = true;
         }
 
-        // Check for loss condition: player pawn is missing
-        if (GameManager.instance.players.Count > 0 && GameManager.instance.players[0].pawn == null)
+        // Loss: player pawn is missing
+        if (GameManager.instance.players.Count > 0 &&
+            GameManager.instance.players[0].pawn == null)
         {
             playerWon = false;
         }
 
-        // Update the title text based on the result
-        if (playerWon)
-        {
-            resultsText.text = "You Win!";
-        }
-        else
-        {
-            resultsText.text = "You Lose!";
-        }
+        // Update result text
+        resultsText.text = playerWon ? "You Win!" : "You Lose!";
     }
 }

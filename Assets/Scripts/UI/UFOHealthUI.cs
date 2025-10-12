@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+// Updates UFO health bar based on current health
 public class UFOHealthUI : MonoBehaviour
 {
     public Image healthFill;
@@ -10,8 +11,6 @@ public class UFOHealthUI : MonoBehaviour
     {
         health = GetComponentInParent<Health>();
     }
-
-
 
     private void Update()
     {

@@ -8,32 +8,30 @@ public abstract class OnCollisionResponse : MonoBehaviour
 
     protected virtual void Start()
     {
-
+        // Optional setup for subclasses
     }
 
     // Entry point for collision logic
     protected virtual void OnCollisionEnter2D(Collision2D other)
     {
-
-        HandleDamage(other.gameObject);
-        HandleEffects(other.gameObject);
-        HandleCleanup();
+        HandleDamage(other.gameObject);   // Apply damage to collided object
+        HandleEffects(other.gameObject);  // Trigger visual/audio feedback
+        HandleCleanup();                  // Optional self-destruction
     }
 
     // Apply damage logic—can be overridden
     protected virtual void HandleDamage(GameObject other)
     {
-
         Health health = other.GetComponentInChildren<Health>();
         if (health != null)
         {
             if (instantKill)
             {
-                health.InstaKill();
+                health.InstaKill(); // Bypass health and kill instantly
             }
             else
             {
-                health.TakeDamage(damageAmount);
+                health.TakeDamage(damageAmount); // Apply standard damage
             }
         }
     }
@@ -44,13 +42,12 @@ public abstract class OnCollisionResponse : MonoBehaviour
         // TODO: camera shake, damage flash, knockback, etc.
     }
 
-    
+    // Optional cleanup logic—used by projectiles
     protected virtual void HandleCleanup()
     {
-        // Destroy self if it's a projectile
         if (GetComponent<Projectile>() != null)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // Destroy projectile after impact
         }
     }
 }

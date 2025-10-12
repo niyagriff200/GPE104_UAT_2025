@@ -60,7 +60,6 @@ public class Health : MonoBehaviour
     // Default death behavior—can be overridden
     protected virtual void Die()
     {
-
         Destroy(gameObject); // destroy the entity
     }
 }

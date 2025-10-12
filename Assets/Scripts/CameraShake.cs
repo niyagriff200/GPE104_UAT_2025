@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Applies temporary camera shake effect on damage
 public class CameraShake : MonoBehaviour
 {
     private float shakeIntensity;

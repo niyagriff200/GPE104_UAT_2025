@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Plays looping UFO hum sound with spatial effects
 public class UFO : MonoBehaviour
 {
     private AudioSource humSource;

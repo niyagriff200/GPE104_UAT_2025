@@ -57,7 +57,6 @@ public class GameManager : MonoBehaviour
     [Header("Enemy Spawning Settings")]
     public List<Transform> enemySpawnPoints;
     public List<GameObject> activeEnemies = new List<GameObject>();
-    [Tooltip("Initial number of enemies to spawn")]
     public int enemyCount;
     [Range(0f, 1f)] public float ufoChance;
     public float enemySpawnInterval;

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Flashes sprite color briefly on damage
 public class DamageFlash : MonoBehaviour
 {
     private Color flashColor;
@@ -9,7 +10,6 @@ public class DamageFlash : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private bool isFlashing = false;
     private float flashTimer = 0f;
-
 
     private void Start()
     {
@@ -25,17 +25,14 @@ public class DamageFlash : MonoBehaviour
         flashDuration = GameManager.instance.flashDuration;
     }
 
-
     private void Update()
     {
-        // If flashing is active, count down the timer
-        if (isFlashing == true)
+        if (isFlashing)
         {
             flashTimer -= Time.deltaTime;
 
             if (flashTimer <= 0f)
             {
-                // Reset color and stop flashing
                 if (spriteRenderer != null)
                 {
                     spriteRenderer.color = normalColor;
@@ -48,7 +45,6 @@ public class DamageFlash : MonoBehaviour
 
     public void Flash()
     {
-        // Start the flash effect
         if (spriteRenderer != null)
         {
             spriteRenderer.color = flashColor;

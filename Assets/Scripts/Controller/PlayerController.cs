@@ -77,6 +77,7 @@ public class PlayerController : Controller
                 pawn.TeleportRandom();
             }
 
+            // Fire projectile (Space key)
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 pawn.shooter.Shoot();

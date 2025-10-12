@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Controls background music playback and switching
 public class PlayBackgroundMusic : MonoBehaviour
 {
     public AudioSource musicSource;
@@ -9,7 +10,7 @@ public class PlayBackgroundMusic : MonoBehaviour
         if (musicSource != null)
         {
             musicSource.loop = true;
-            musicSource.spatialBlend = 0f;
+            musicSource.spatialBlend = 0f; // 2D sound
         }
     }
 

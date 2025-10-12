@@ -7,7 +7,7 @@ public class SeekerMover : MonoBehaviour
 
     private void Start()
     {
-        // Initialize speed from GameManager settings
+        // Cache speed from GameManager for designer control
         moveSpeed = GameManager.instance.ufoMoveSpeed;
     }
 
@@ -19,13 +19,13 @@ public class SeekerMover : MonoBehaviour
 
     public void FindPlayerPosition()
     {
-        // Calculate vector from this object to the player's pawn
+        // Get direction vector toward the first player's pawn
         Vector3 moveVector = GameManager.instance.players[0].pawn.transform.position - transform.position;
 
-        // Normalize direction and apply movement based on speed and deltaTime
+        // Normalize and scale movement by speed and deltaTime
         moveVector = moveVector.normalized * moveSpeed * Time.deltaTime;
 
-        // Move toward the player
+        // Apply movement toward the player
         transform.position += moveVector;
     }
 }
