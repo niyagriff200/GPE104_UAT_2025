@@ -5,6 +5,7 @@ public class UFOOnCollisionResponse : OnCollisionResponse
 {
     protected override void Start()
     {
+        //TODO: Check if GameManager is null
         // Pull damage value from GameManager for designer control
         damageAmount = GameManager.instance.ufoDamage;
     }

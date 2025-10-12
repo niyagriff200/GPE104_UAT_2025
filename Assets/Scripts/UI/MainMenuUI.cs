@@ -31,6 +31,7 @@ public class MainMenuUI : MonoBehaviour
     {
         if (GameManager.instance != null)
         {
+            Debug.Log("You exited the game.");
             GameManager.instance.QuitGame();
         }
     }

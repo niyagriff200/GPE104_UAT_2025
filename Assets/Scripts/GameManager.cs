@@ -85,8 +85,6 @@ public class GameManager : MonoBehaviour
     private float healSpawnTimer;
     private List<GameObject> activeHealPickups = new List<GameObject>();
 
-
-
     [Header("Meteor Split Settings")]
     public int bigMeteorSplitCount;
     public int mediumMeteorSplitCount;
