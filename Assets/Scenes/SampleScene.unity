@@ -856,7 +856,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &143329891
 Transform:
   m_ObjectHideFlags: 0
@@ -4129,7 +4129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1043859537
 Transform:
   m_ObjectHideFlags: 0
@@ -5799,7 +5799,7 @@ MonoBehaviour:
   - {fileID: 477619596}
   - {fileID: 1651903361}
   activeEnemies: []
-  enemyCount: 50
+  enemyCount: 10
   ufoChance: 0.3
   enemySpawnInterval: 5
   initialEnemiesSpawned: 0
@@ -5815,7 +5815,7 @@ MonoBehaviour:
   healPickupPrefab: {fileID: 4002968809679921143, guid: 31e23fff497e7ac4b9f26f7dc7e832b6, type: 3}
   healAmount: 25
   healSpawnInterval: 60
-  bigMeteorSplitCount: 2
+  bigMeteorSplitCount: 3
   mediumMeteorSplitCount: 2
   minX: -9
   maxX: 9
